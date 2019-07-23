@@ -3,13 +3,13 @@ from flask import Flask,make_response
 app = Flask(__name__)
 
 
-app.route("/")
+@app.route('/')
 def home():
     return 'Hello'
 
-app.route("/tasks/")
+@app.route("/tasks/")
 def get_all_tasks():
-    return 'Hello word'
+    return make_response('[]',201)
 
 if __name__ == "__main__":
     app.run()
